@@ -57,6 +57,8 @@ impl Component for Counter {
     }
 
     fn view(&self) -> Html {
+        use log::info;
+        info!("counter view has been called");
         let colorize = {
             match self.color {
                 Color::Red => "background: red;",

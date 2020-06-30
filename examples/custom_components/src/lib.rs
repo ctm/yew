@@ -61,9 +61,14 @@ impl Component for Model {
             <div class="custom-components-example">
                 <button onclick=self.link.callback(|_| Msg::Toggle)>{ "Toggle" }</button>
                 { self.view_barrier() }
-                { for (1..1001).map(counter) }
+                { for (1..4).map(counter) }
             </div>
         }
+    }
+
+    fn rendered(&mut self, first_render: bool) {
+        use log::info;
+        info!("top-level rendered, first_render: {}", first_render);
     }
 }
 
